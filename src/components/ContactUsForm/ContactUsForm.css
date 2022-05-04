@@ -1,0 +1,37 @@
+.ct_header {
+    text-align: center;
+}
+
+.ContactUsForm {
+    margin-top: 30px;
+}
+
+h6.ct_title {
+    color: #51DDDA;
+}
+div.formArea_ct {
+    width: 60%;
+    /* justify-content: center; */
+}
+.ct_form {
+    display: flex;
+    justify-content: center;
+}
+.ct_form {
+    margin-top: 50px;
+}
+.ContactUsForm {
+    background-color: #3C4356;
+    padding: 70px 0 70px 0;
+}
+h3.ct_des {
+    color: aliceblue;
+}
+.submitBtn_ct {
+    display: flex;
+    justify-content: center;
+}
+button.ct_btn {
+    background-color: #51DDDA;
+    padding: 5px 25px 5px 25px;
+}

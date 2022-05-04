@@ -1,0 +1,22 @@
+.rowinfo.row {
+    justify-content: center;
+}
+.cardinfo.col-md-3.col-6 {
+    /* padding-right: 5px; */
+    background-color: aquamarine;
+    margin-right: 10px;
+    display: flex;
+}
+.icon {
+    width: 25%;
+    padding-top: 8%;
+    font-size: 30px;
+    padding-right: 10px;
+}
+.titleinfo {
+    size: a5;
+    
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: 600;
+}

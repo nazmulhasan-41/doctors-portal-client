@@ -1,0 +1,33 @@
+a.headername {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+
+
+.navbar-expand {
+    flex-wrap: nowrap;
+    justify-content: end;
+}
+.headerContainer {
+    display: flex;
+    justify-content: end;
+}
+.navbar {
+ 
+    justify-content: center !important;
+    
+}
+
+
+a.headername.blog {
+    color: aliceblue;
+}
+a.headername.contactus {
+    color: aliceblue;
+}
+.d-flex.align-items-center.row {
+    padding-top: 7%;
+    padding-bottom: 7%;
+}

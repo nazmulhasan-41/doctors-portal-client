@@ -1,0 +1,24 @@
+/* testing start*/
+
+.fullheader {
+    /* height:300px; */
+    width:100%;
+    /* outline:thin solid black; */
+    position:relative;
+    background:white;
+    z-index: -20;
+}
+.fullheader::after, .fullheader::before {
+    height:100%;
+    content:' ';
+    position: absolute;
+    top: 0;
+    width: 37%;
+}
+.fullheader::after {
+    right: 0;
+    background-color: #3A4256;
+    z-index:-10
+}
+
+/* testing end   */

@@ -1,0 +1,18 @@
+.testimonial {
+    margin: 30px 10px 30px 10px;
+}       
+.imageArea {
+    display: flex;
+}
+.userInfo {
+    margin: 20px 0 0 15px;
+}
+.row_testimonial.row {
+    justify-content: center;
+}
+.col_testimonial.col-md-3.col-12 {
+    margin: 10px;
+}
+.testimonial {
+    text-align: center;
+}

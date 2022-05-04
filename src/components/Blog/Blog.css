@@ -1,0 +1,22 @@
+.blog {
+    text-align: center;
+}
+.imageArea_blog {
+    display: flex;
+}
+.userInfo_blog {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.col_blog.col-md-3.col-12 {
+    margin: 10px;
+}
+.row_blog.row {
+    justify-content: center;
+}
+h6.title_blog {
+    color: #15D1C4;
+}
+img.image_blog {
+    width: 30%;
+}

@@ -1,0 +1,16 @@
+
+.btnclass {
+    background-color: #17D2B6;
+    border-radius: 5px;
+    padding: 10px 15px 10px 15px;
+    margin-top: 20px;
+}
+img.imgClass {
+    width: 100%;
+}
+
+
+.appointmentArea.col-md-5.col-12 {
+    padding-left: 4%;
+}
+

@@ -1,0 +1,25 @@
+.serviceArea {
+    /* justify-content: center; */
+    text-align: center;
+}
+.row_service.row {
+    justify-content: center;
+}
+.cardservice.col-md-3.col-6 {
+    margin-left: 25px;
+    margin-top: 30px;
+}
+.heading_service {
+    margin-top: 30px;
+}
+h2.serviceTitle {
+    color: #0ba26f;
+    font-family: serif;
+}
+h6.desservice {
+    color: #918a8a;
+    font-weight: 400;
+}
+.serviceArea {
+    margin: 50px 0px 50px 0px;
+}
