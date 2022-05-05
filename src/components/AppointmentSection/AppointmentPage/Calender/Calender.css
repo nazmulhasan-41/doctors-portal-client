@@ -1,0 +1,27 @@
+.react-calendar__month-view__weekdays__weekday {
+    color: black;
+}
+.row_cldr.row {
+    margin-top: 50px;
+}
+.title_cldr {
+    color: black;
+}
+.main_cldr {
+    display: flex;
+    justify-content: center;
+}
+.title_cldr {
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+img.cldr_right_img {
+    width: 100%;
+    
+}
+.cldr_right.align-items-center.col-md-6.col-12 {
+    display: flex;
+    justify-content: center;
+}

@@ -1,27 +1,25 @@
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Container } from "react-bootstrap";
 import Footer from './components/Footer/Footer';
-import FullHeader from './components/Home/FullHeader/FullHeader';
-import Services from './components/services/Services';
-import Care from './components/Care/Care';
-import AppointmentHome from './components/AppointmentHome/AppointmentHome';
 import MainPage from './components/Home/MainPage/MainPage';
-
+import AppointmentPage from './components/AppointmentSection/AppointmentPage/AppointmentPage';
+import Header from './components/Header/Header';
+import Modaltest from './components/AppointmentSection/AppointmentPage/APoointmentsAvailable/Modaltest';
 
 function App() {
   return (
 
-      <Container className='mainContainer'>
-        
-        
-        
+    <Container className='mainContainer'>
+
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/appointment" element={<AppointmentPage />} />
+        <Route path="/service" element={<Header />} />
       </Routes>
       <Footer></Footer>
 
-      </Container>
+    </Container>
 
   );
 }

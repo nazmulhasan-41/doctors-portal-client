@@ -4,8 +4,6 @@ a.headername {
     color: black;
 }
 
-
-
 .navbar-expand {
     flex-wrap: nowrap;
     justify-content: end;
@@ -19,8 +17,6 @@ a.headername {
     justify-content: center !important;
     
 }
-
-
 a.headername.blog {
     color: aliceblue;
 }

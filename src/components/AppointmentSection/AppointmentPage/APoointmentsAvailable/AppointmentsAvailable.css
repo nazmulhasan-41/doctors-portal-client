@@ -1,0 +1,56 @@
+
+
+.row_apnmnt.row {
+    display: flex;
+    justify-content: center;
+    /* align-content: center;
+    align-items: center; */
+}
+
+.single_card_col.col-md-3.col-6 {
+    margin: 10px;
+}
+.AppointmentsAvailable {
+    margin-top: 50px;
+}
+.title_apnmt {
+    display: flex;
+    justify-content: center;
+    /* align-items: center;
+    align-content: center; */
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: #1CC7C1;
+}
+button.book_apnmnt_btn.btn.btn-primary {
+    /* background-color:linear-gradient( #1CC7C1, #a21c4f); */
+    background-image: linear-gradient(#1CC7C1, #ebf1f0);
+}
+.classBody_apnmnt.card-body {
+    text-align: center;
+}
+.time_apnmnt {
+    font-weight: 500;
+}
+.cardTitle_apnmnt.card-title.h5 {
+    color: #1CC7C1;
+}
+.classBody_apnmnt.card-body {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+form.form_modal {
+    margin-top: 10px;
+}
+input#formBasicEmail {
+    margin-top: 5px;
+    width: 300px;
+}
+
+.single_card_col.col {
+    max-width: 34%;
+    margin-top: 10px;
+    min-width: fit-content;
+}
