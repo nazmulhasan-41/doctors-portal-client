@@ -62,7 +62,7 @@ const AppointmentsAvailable = ({ date }) => {
                     apnmtByDate.map(apnmt => (
                         <Col className='single_card_col'>
 
-                            <SingleCard apnmt={apnmt}>
+                            <SingleCard apnmt={apnmt} date={date}>
 
                             </SingleCard>
 

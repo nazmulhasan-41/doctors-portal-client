@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import MyModal from '../Mymodal/MyModal';
 
-const SingleCard = ({ apnmt }) => {
+const SingleCard = ({ apnmt,date }) => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -33,6 +33,7 @@ const SingleCard = ({ apnmt }) => {
                     serviceName={apnmt.serviceName}
                     modalIsOpen={modalIsOpen}
                     closeModal={closeModal}
+                    date={date}
                 ></MyModal>
 
 

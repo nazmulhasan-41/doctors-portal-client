@@ -3,6 +3,7 @@ import { ModalTitle } from 'react-bootstrap';
 
 import Modal from 'react-modal';
 import Modaltest from '../APoointmentsAvailable/Modaltest';
+import { useForm } from "react-hook-form";
 
 const customStyles = {
     content: {
@@ -17,10 +18,14 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 
-const MyModal = ({ serviceName, closeModal, modalIsOpen }) => {
+const MyModal = ({ serviceName, closeModal, modalIsOpen , date}) => {
 
-    console.log(serviceName);
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        console.log(data);
+        closeModal();
 
+    }
     return (
         <div>
 
@@ -31,10 +36,24 @@ const MyModal = ({ serviceName, closeModal, modalIsOpen }) => {
                 contentLabel="Example Modal"
             >
                 <h2 >{serviceName}</h2>
-                <button onClick={closeModal}>Send</button>
-                <Modaltest></Modaltest>
+               
 
-              
+                <form className='formModal' onSubmit={handleSubmit(onSubmit)}>
+                    <input {...register("firstName")} /><br />
+                    <input  {...register("phoneno")} /><br />
+                    <input {...register("email")} /><br />
+                    <input defaultValue={date.toDateString()} {...register("date")} /><br />
+                    <input {...register("age")} /><br />
+                    <select  label="Age" {...register("selectTime")}>
+                        <option value="female">female</option>
+                        <option value="male">male</option>
+                        <option value="other">other</option>
+                    </select>
+                    <br />
+                    <input type="submit" />
+                </form>
+
+
             </Modal>
 
         </div>

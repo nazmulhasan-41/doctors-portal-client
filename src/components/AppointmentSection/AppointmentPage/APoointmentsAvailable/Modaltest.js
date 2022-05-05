@@ -2,27 +2,34 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
 
-const Modaltest = () => {
+const Modaltest = ({closeModal}) => {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data =>
+  {
+    console.log(data);
+    closeModal();
 
-  console.log(watch("example"));
-    
-    return (
-        /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-    <form onSubmit={handleSubmit(onSubmit)}>
-    {/* register your input into the hook by invoking the "register" function */}
-    <input defaultValue="test" {...register("example")} />
-    
-    {/* include validation with required or other standard HTML validation rules */}
-    <input {...register("exampleRequired", { required: true })} />
-    {/* errors will return when field validation fails  */}
-    {errors.exampleRequired && <span>This field is required</span>}
-    
-    <input type="submit" />
-  </form>
-    );
+  } 
+
+  return (
+    /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
+
+
+    <form className='formModal' onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("firstName")} /><br />
+      <input {...register("phoneno")} /><br />
+      <input {...register("email")} /><br />
+      <input {...register("date")} /><br />
+      <select {...register("selectTime")}>
+        <option value="female">female</option>
+        <option value="male">male</option>
+        <option value="other">other</option>
+      </select>
+      <br />
+      <input type="submit" />
+    </form>
+  );
 };
 
 export default Modaltest;
