@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import MyModal from '../Mymodal/MyModal';
 
 const SingleCard = ({ apnmt,date }) => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
+    let navigate = useNavigate();
 
     function openModal() {
-        setIsOpen(true);
+
+        //check weather user is logged in
+        var email=localStorage.getItem('email');
+        // console.log(email, typeof email);
+        if( email)
+        {
+            setIsOpen(true);
+        }
+        else{
+            navigate('/login');
+        }
+        
     }
 
     function closeModal() {
         setIsOpen(false);
     }
-
     return (
 
         <Card className='card_apnmnt' >
@@ -21,7 +33,7 @@ const SingleCard = ({ apnmt,date }) => {
             <Card.Body className='classBody_apnmnt'>
                 <Card.Title className='cardTitle_apnmnt'>{apnmt.serviceName}</Card.Title>
                 <div className='time_apnmnt'>
-                    {apnmt.date}.00-{(apnmt.date) + 1}:00
+                    {apnmt.time}.00-{(apnmt.time) + 1}:00
                 </div>
                 <Card.Text>
                     {apnmt.availableSeats} spaces available
@@ -30,6 +42,7 @@ const SingleCard = ({ apnmt,date }) => {
                 <Button className='book_apnmnt_btn' onClick={openModal} variant="primary">Book Appointment</Button>
 
                 <MyModal
+                    apnmt={apnmt}
                     serviceName={apnmt.serviceName}
                     modalIsOpen={modalIsOpen}
                     closeModal={closeModal}

@@ -1,8 +1,5 @@
 import React from 'react';
-import { ModalTitle } from 'react-bootstrap';
-
 import Modal from 'react-modal';
-import Modaltest from '../APoointmentsAvailable/Modaltest';
 import { useForm } from "react-hook-form";
 
 const customStyles = {
@@ -17,12 +14,23 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 
+const MyModal = ({ serviceName, closeModal, modalIsOpen , date,apnmt}) => {
 
-const MyModal = ({ serviceName, closeModal, modalIsOpen , date}) => {
+    var email=localStorage.getItem('email');
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        console.log(data);
+        var newData={...data,email, ...apnmt};
+        
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newData)
+        };
+        fetch('http://localhost:5000/addAppointment', requestOptions)
+            .then(response => response.json())
+            .then(res => console.log(res) );
+
         closeModal();
 
     }
@@ -37,27 +45,23 @@ const MyModal = ({ serviceName, closeModal, modalIsOpen , date}) => {
             >
                 <h2 >{serviceName}</h2>
                
-
                 <form className='formModal' onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register("firstName")} /><br />
-                    <input  {...register("phoneno")} /><br />
-                    <input {...register("email")} /><br />
+                    <input placeholder='Patients name' {...register("firstName")} /><br />
+                    <input placeholder='Phone No' {...register("phoneno")} /><br />
                     <input defaultValue={date.toDateString()} {...register("date")} /><br />
-                    <input {...register("age")} /><br />
-                    <select  label="Age" {...register("selectTime")}>
+                    <input placeholder='Age' {...register("age")} /><br />
+                    <input placeholder='Weight' {...register("weight")} /><br />
+                    {/* <select  label="Age" {...register("selectTime")}>
                         <option value="female">female</option>
                         <option value="male">male</option>
-                        <option value="other">other</option>
-                    </select>
+                       
+                    </select> */}
                     <br />
                     <input type="submit" />
                 </form>
 
-
             </Modal>
-
         </div>
-
     );
 };
 

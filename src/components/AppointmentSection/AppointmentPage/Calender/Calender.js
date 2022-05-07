@@ -11,7 +11,6 @@ const Calender = ({selectDate}) => {
     const clickDayHandler=(date)=>{
         selectDate(date);
     }
-    
 
     return (
         

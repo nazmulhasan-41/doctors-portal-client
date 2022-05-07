@@ -14,35 +14,34 @@ const AppointmentsAvailable = ({ date }) => {
         {
             id: 1,
             serviceName: 'Orthodentics',
-            date: n,
+            time: 7,
             availableSeats: 10,
 
         },
         {
             id: 2,
             serviceName: 'medicine',
-            date: n,
+            time: 8,
             availableSeats: 10,
 
         },
         {
             id: 3,
             serviceName: 'gynocology',
-            date: n,
+            time: 9,
             availableSeats: 10,
 
         },
         {
             id: 3,
             serviceName: 'Nurology',
-            date: n,
+            time: 10,
             availableSeats: 10,
-
         },
         {
             id: 3,
             serviceName: 'orthodentics',
-            date: n,
+            time: 2,
             availableSeats: 10,
 
         },

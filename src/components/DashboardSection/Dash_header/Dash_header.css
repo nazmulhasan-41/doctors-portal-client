@@ -1,0 +1,8 @@
+.dash_header {
+    background-color: aliceblue;
+}
+a.dash_headername {
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+}
