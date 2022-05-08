@@ -13,7 +13,7 @@ const Dash_prescriptions = () => {
     useEffect(() => {
         var obj = { email: email };
         if (doc_email) {
-            obj = {};
+            obj = {docEmail: doc_email};
         }
         var stringifyObj = JSON.stringify(obj);
 

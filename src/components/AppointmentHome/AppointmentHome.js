@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import './ApoointmentHome.css';
 import doctor from '../../images/doctor.png';
+import { Link } from 'react-router-dom';
 
 
 const AppointmentHome = () => {
@@ -23,9 +24,9 @@ const AppointmentHome = () => {
                         There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure ther
 
                     </h6>
-                    <Button  className='learnmore_ah' >
+                    <Link to='/appointment'  className='learnmore_ah' >
                         Learn More
-                    </Button>
+                    </Link>
                 </Col>
             </Row>
 

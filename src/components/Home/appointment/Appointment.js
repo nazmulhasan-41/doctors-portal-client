@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import chair from '../../../images/chair.png';
 import './Appointment.css'
 
@@ -12,9 +13,9 @@ const Appointment = () => {
                         your new smile starts here
                     </h4>
                     <div>
-                        <button className='btnclass'>
+                        <Link to='/appointment' className='btnclass'>
                             get Appointment
-                        </button>
+                        </Link>
                     </div>
                 </Col>
 

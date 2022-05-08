@@ -8,5 +8,4 @@ const D_calender = ({  selectDateHandler }) => {
         </div>
     );
 };
-
 export default D_calender;

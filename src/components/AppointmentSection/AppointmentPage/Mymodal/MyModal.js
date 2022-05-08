@@ -14,16 +14,21 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 
-const MyModal = ({ serviceName, closeModal, modalIsOpen , date,apnmt}) => {
+const MyModal = ({ closeModal, modalIsOpen , date,apnmt}) => {
 
     var email=localStorage.getItem('email');
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        var newData={...data,email, ...apnmt , prescriptionFlag:0};
+        var serviceId=apnmt.serviceId;
+        var docEmail=apnmt.docEmail;
+        var time=apnmt.time;
+        var slots=apnmt.slots;
+        var newApnmt={serviceId,docEmail,time,slots}
 
-        // var checkData={...data,email, ...apnmt, prescriptionFlag:0};
-        // console.log(checkData);
+        console.log(newApnmt);
+
+        var newData={...data, email, ...newApnmt , prescriptionFlag:0};
 
         const requestOptions = {
             method: 'POST',
@@ -45,7 +50,7 @@ const MyModal = ({ serviceName, closeModal, modalIsOpen , date,apnmt}) => {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <h2 >{serviceName}</h2>
+                <h2 >{apnmt.serviceId}</h2>
                
                 <form className='formModal' onSubmit={handleSubmit(onSubmit)}>
                     <input placeholder='Patients name' {...register("firstName")} /><br />

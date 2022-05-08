@@ -13,6 +13,7 @@ import DoctorLogin from './components/AppointmentSection/AppointmentPage/Login/D
 import Dash_addService from './components/DashboardSection/Dash_addService/Dash_addService';
 import Dash_addDoctor from './components/DashboardSection/Dash_addDoctor/Dash_addDoctor';
 import AddDocAppointment from './components/DashboardSection/AddDocAppointment/AddDocAppointment';
+import Dash_docsAppmointment from './components/DashboardSection/Dash_docsAppmointment/Dash_docsAppmointment';
 
 function App() {
  
@@ -35,6 +36,7 @@ function App() {
           <Route path="d_addService" element={<Dash_addService />} />
           <Route path="d_addDoctor" element={<Dash_addDoctor />} />
           <Route path="d_addDocAppmnt" element={<AddDocAppointment />} />
+          <Route path="d_docsAppmnt" element={<Dash_docsAppmointment />} />
 
         </Route>
 

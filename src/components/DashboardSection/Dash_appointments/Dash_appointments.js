@@ -6,7 +6,7 @@ const Dash_appointments = () => {
     var doc_email = localStorage.getItem('doc_email');
 
     const [myApmnt, setMyApmnt] = useState([]);
-    const [selectedDate, onChange] = useState('');
+    const [selectedDate, onChange] = useState((new Date()).toDateString());
     const selectDateHandler = (date) =>
     {
 
@@ -24,9 +24,9 @@ const Dash_appointments = () => {
 
     useEffect(() => {
 
-        var obj = { email: email };
+        var obj = { email: email ,date: selectedDate };
         if(doc_email){
-            obj = {};
+            obj = {date: selectedDate};
         }
         var stringifyObj = JSON.stringify(obj);
         fetch(`http://localhost:5000/getAppointments/${stringifyObj}`)

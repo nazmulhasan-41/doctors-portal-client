@@ -1,53 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import MyModal from '../Mymodal/MyModal';
 import SingleCard from '../SingleCard/SingleCard';
 import './AppointmentsAvailable.css';
 
-
-
 const AppointmentsAvailable = ({ date }) => {
     var d = new Date();
     var n = d.getUTCHours();
 
-    const apnmtByDate = [
-        {
-            id: 1,
-            serviceName: 'Orthodentics',
-            time: 7,
-            availableSeats: 10,
+    const [apnmtByDate,setApnmtByDate]=useState([]);
 
-        },
-        {
-            id: 2,
-            serviceName: 'medicine',
-            time: 8,
-            availableSeats: 10,
+    useEffect(()=>{
+        fetch('http://localhost:5000/getAllAppointments')
+        .then(response=>response.json())
+        .then(result=>setApnmtByDate(result))
 
-        },
-        {
-            id: 3,
-            serviceName: 'gynocology',
-            time: 9,
-            availableSeats: 10,
+    },[]) 
 
-        },
-        {
-            id: 3,
-            serviceName: 'Nurology',
-            time: 10,
-            availableSeats: 10,
-        },
-        {
-            id: 3,
-            serviceName: 'orthodentics',
-            time: 2,
-            availableSeats: 10,
-
-        },
-    ];
-
-
+ 
     return (
         <div className='AppointmentsAvailable' >
 

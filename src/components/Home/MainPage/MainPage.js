@@ -14,7 +14,7 @@ const MainPage = () => {
             {/* <Appointment></Appointment>  */}
 
 
-            <FullHeader> </FullHeader>
+        <FullHeader> </FullHeader>
         <Services></Services>
         <Care></Care>
         <AppointmentHome> </AppointmentHome>

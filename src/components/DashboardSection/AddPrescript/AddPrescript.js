@@ -10,8 +10,14 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
+    
     var email = localStorage.getItem('email');
     var doc_email = localStorage.getItem('doc_email');
+
+    console.log(apmnt);
+
+
+
 
     function openModal() {
         setIsOpen(true);
@@ -63,11 +69,7 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
 
     return (
         <div>
-            {apmnt._id}
-            {apmnt.firstName}
-            {apmnt.date}
-            {apmnt.time}
-            {apmnt.age}
+            {apmnt._id} '  ' {apmnt.firstName}' ' {apmnt.date}' ' {apmnt.time}' '  {apmnt.prescriptionFlag}
 
             {
                 apmnt.prescriptionFlag > 0 ?
@@ -76,7 +78,7 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
                     :
                     <>
                     {
-                        doc_email ? 
+                        (doc_email && doc_email == apmnt.docEmail) ? 
                     
                         <button onClick={openModal}>Add Prescription</button>
                         :

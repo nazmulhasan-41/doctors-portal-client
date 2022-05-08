@@ -31,19 +31,19 @@ const SingleCard = ({ apnmt,date }) => {
         <Card className='card_apnmnt' >
 
             <Card.Body className='classBody_apnmnt'>
-                <Card.Title className='cardTitle_apnmnt'>{apnmt.serviceName}</Card.Title>
+                <Card.Title className='cardTitle_apnmnt'>{apnmt.serviceId}</Card.Title>
+                <h6>{apnmt.docEmail}</h6>
                 <div className='time_apnmnt'>
-                    {apnmt.time}.00-{(apnmt.time) + 1}:00
+                    {apnmt.time} AM/PM
                 </div>
                 <Card.Text>
-                    {apnmt.availableSeats} spaces available
+                    {apnmt.slots} spaces available
                 </Card.Text>
 
                 <Button className='book_apnmnt_btn' onClick={openModal} variant="primary">Book Appointment</Button>
 
                 <MyModal
                     apnmt={apnmt}
-                    serviceName={apnmt.serviceName}
                     modalIsOpen={modalIsOpen}
                     closeModal={closeModal}
                     date={date}

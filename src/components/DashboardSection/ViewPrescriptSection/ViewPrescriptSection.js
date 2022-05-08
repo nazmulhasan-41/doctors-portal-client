@@ -38,8 +38,8 @@ const ViewPrescriptSection = ({ apmnt }) => {
             >
                 <form >
                     {/* apoointment ID: {apmnt._id}<br /> */}
-                    {prescript._id}
-                    {prescript.prescribeFields}
+                    {prescript._id} <br/>
+                    {prescript.prescribeFields} <br/> <br/>
 
                     <button onClick={closetHandler} >Close</button>
                 </form>
