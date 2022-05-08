@@ -20,8 +20,11 @@ const MyModal = ({ serviceName, closeModal, modalIsOpen , date,apnmt}) => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        var newData={...data,email, ...apnmt};
-        
+        var newData={...data,email, ...apnmt , prescriptionFlag:0};
+
+        // var checkData={...data,email, ...apnmt, prescriptionFlag:0};
+        // console.log(checkData);
+
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -32,7 +35,6 @@ const MyModal = ({ serviceName, closeModal, modalIsOpen , date,apnmt}) => {
             .then(res => console.log(res) );
 
         closeModal();
-
     }
     return (
         <div>
@@ -51,12 +53,7 @@ const MyModal = ({ serviceName, closeModal, modalIsOpen , date,apnmt}) => {
                     <input defaultValue={date.toDateString()} {...register("date")} /><br />
                     <input placeholder='Age' {...register("age")} /><br />
                     <input placeholder='Weight' {...register("weight")} /><br />
-                    {/* <select  label="Age" {...register("selectTime")}>
-                        <option value="female">female</option>
-                        <option value="male">male</option>
-                       
-                    </select> */}
-                    <br />
+                      <br />
                     <input type="submit" />
                 </form>
 

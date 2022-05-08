@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './DoctoreLogin.css';
 
 
 const DoctorLogin = () => {
     const [userInfo,setUserInfo]=useState({});
+    const navigate=useNavigate();
     
 
     const docLoginHandler=(e)=>{
@@ -14,9 +16,11 @@ const DoctorLogin = () => {
         fetch(`http://localhost:5000/doctorlogin/${stringifyObj}`)
             .then(data => data.json())
             .then(res => {
-                res.email? 
-                localStorage.setItem('doc_email',res.email):
-                console.log(res)
+                // res.email? 
+              localStorage.setItem('doc_email',res.email);
+              navigate('/')
+              
+             
             })
 
     }

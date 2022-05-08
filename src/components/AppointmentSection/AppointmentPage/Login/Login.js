@@ -10,7 +10,7 @@ const app = initializeApp(firebaseConfig);
 
 const Login = () => {
 
-    const [loggedEmail, setLoggedEmail] = useState(localStorage.getItem("email"));
+    const [loggedEmail, setLoggedEmail] = useState(localStorage.getItem("email") || localStorage.getItem("doc_email"));
     const navigate = useNavigate();
 
     const signInHandler = () => {
@@ -28,7 +28,6 @@ const Login = () => {
                 
                 navigate(-1);
 
-
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -36,6 +35,7 @@ const Login = () => {
     }
     const signOutHandler=()=>{
         localStorage.setItem("email", '');
+        localStorage.setItem("doc_email", '');
         setLoggedEmail('');
     }
     const doctorSignInHandler=()=>{
@@ -51,17 +51,13 @@ const Login = () => {
             {
                 loggedEmail ?
                 <button onClick={signOutHandler}> Log out</button>:
+                <>
                 <button onClick={signInHandler}> Google sign In</button>
-
+                <button onClick={doctorSignInHandler}> Doctor sign In</button>
+                </>
             }
-            <button onClick={doctorSignInHandler}> Doctor sign In</button>
+        
             <Outlet/>
-
-            
-            
-
-
-
         </div>
     );
 };

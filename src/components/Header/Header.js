@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
-    var email=localStorage.getItem('email');
+    var email=localStorage.getItem('email') ||  localStorage.getItem("doc_email");
     return (
 
         <Navbar className='navbar container' variant="light">
@@ -29,8 +29,6 @@ const Header = () => {
                     }
                     
                 </Nav>
-
-
 
             </div>
         </Navbar>

@@ -10,10 +10,12 @@ import Dashboard from './components/DashboardSection/Dashboard/Dashboard';
 import Dash_appointments from './components/DashboardSection/Dash_appointments/Dash_appointments';
 import Dash_prescriptions from './components/DashboardSection/dash_prescriptions/Dash_prescriptions';
 import DoctorLogin from './components/AppointmentSection/AppointmentPage/Login/DoctorLogin';
+import Dash_addService from './components/DashboardSection/Dash_addService/Dash_addService';
+import Dash_addDoctor from './components/DashboardSection/Dash_addDoctor/Dash_addDoctor';
+import AddDocAppointment from './components/DashboardSection/AddDocAppointment/AddDocAppointment';
 
 function App() {
-  var doc_email = localStorage.getItem('doctorEmail');
-  console.log(doc_email);
+ 
 
   return (
 
@@ -30,9 +32,11 @@ function App() {
           <Route path='d_dashboard' element={<Dashboard />} />
           <Route path="d_appnm" element={<Dash_appointments />} />
           <Route path="d_pres" element={<Dash_prescriptions />} />
+          <Route path="d_addService" element={<Dash_addService />} />
+          <Route path="d_addDoctor" element={<Dash_addDoctor />} />
+          <Route path="d_addDocAppmnt" element={<AddDocAppointment />} />
+
         </Route>
-
-
 
       </Routes>
       <Footer></Footer>
