@@ -9,12 +9,12 @@ const Appointment = () => {
         <div>
             <Row className='d-flex align-items-center' >
                 <Col xs={12} md={5} className='appointmentArea'>
-                    <h4>
-                        your new smile starts here
+                    <h4 className='TitleAppmnt'>
+                        Your new smile starts here
                     </h4>
                     <div>
-                        <Link to='/appointment' className='btnclass'>
-                            get Appointment
+                        <Link to='/appointment' className='btnclass appmnt'>
+                            Get Appointment
                         </Link>
                     </div>
                 </Col>

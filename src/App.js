@@ -14,6 +14,8 @@ import Dash_addService from './components/DashboardSection/Dash_addService/Dash_
 import Dash_addDoctor from './components/DashboardSection/Dash_addDoctor/Dash_addDoctor';
 import AddDocAppointment from './components/DashboardSection/AddDocAppointment/AddDocAppointment';
 import Dash_docsAppmointment from './components/DashboardSection/Dash_docsAppmointment/Dash_docsAppmointment';
+import ContactPage from './components/ContactPage/ContactPage';
+import AppointmentDetails from './components/AppointmentDetails/AppointmentDetails';
 
 function App() {
  
@@ -38,8 +40,14 @@ function App() {
           <Route path="d_addDocAppmnt" element={<AddDocAppointment />} />
           <Route path="d_docsAppmnt" element={<Dash_docsAppmointment />} />
 
-        </Route>
 
+        </Route>
+        <Route path="/contactPage" element={<ContactPage />} />
+        <Route path="/appmntDetails/:id" element={<AppointmentDetails />} />
+
+
+
+        
       </Routes>
       <Footer></Footer>
 

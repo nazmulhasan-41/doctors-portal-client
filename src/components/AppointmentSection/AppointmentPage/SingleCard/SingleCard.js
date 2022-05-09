@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import MyModal from '../Mymodal/MyModal';
 
 const SingleCard = ({ apnmt,date }) => {
@@ -10,9 +10,8 @@ const SingleCard = ({ apnmt,date }) => {
 
     function openModal() {
 
-        //check weather user is logged in
         var email=localStorage.getItem('email');
-        // console.log(email, typeof email);
+
         if( email)
         {
             setIsOpen(true);
@@ -26,12 +25,27 @@ const SingleCard = ({ apnmt,date }) => {
     function closeModal() {
         setIsOpen(false);
     }
+
+    const [serviceName,setServiceName]=useState('');
+    useEffect(()=>{
+        fetch(`http://localhost:5000/getServiceName/${apnmt.serviceId}`)
+        .then(response=>response.json())
+        .then(result=>
+            {
+                console.log(result);
+                setServiceName(result.serviceName)
+                
+            }
+            )
+
+    },[]) 
+
     return (
 
         <Card className='card_apnmnt' >
 
             <Card.Body className='classBody_apnmnt'>
-                <Card.Title className='cardTitle_apnmnt'>{apnmt.serviceId}</Card.Title>
+                <Link to ={`/appmntDetails/${apnmt._id}`}  className='cardTitle_apnmnt'>{serviceName}</Link>
                 <h6>{apnmt.docEmail}</h6>
                 <div className='time_apnmnt'>
                     {apnmt.time} AM/PM
@@ -47,6 +61,7 @@ const SingleCard = ({ apnmt,date }) => {
                     modalIsOpen={modalIsOpen}
                     closeModal={closeModal}
                     date={date}
+                    serviceName={serviceName}
                 ></MyModal>
 
 

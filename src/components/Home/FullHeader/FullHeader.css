@@ -6,20 +6,18 @@
     background:white;
     z-index: 1;
 }
-.fullheader::after, .fullheader::before {
+/* .fullheader::after, .fullheader::before {
     height:100%;
     content:' ';
     position: absolute;
     top: 0;
     width: 37%;
     z-index: -1;
-
-    
 }
 .fullheader::after {
     right: 0;
     background-color: #3A4256;
     z-index:-1;
-}
+} */
 
 /* testing end   */

@@ -29,6 +29,9 @@ const Dash_addService = () => {
 
                 <input placeholder='Service Name' {...register("serviceName", { required: true })} />
                 <br /><br />
+                <input placeholder='Service description' {...register("serviceDescription", { required: true })} />
+                <br /><br />
+
                 <input type="submit" />
 
             </form>

@@ -14,6 +14,7 @@ const Dash_header = () => {
                     <Link className='dash_headername' to="d_dashboard">Dashboard</Link>
                     <Link className='dash_headername' to="d_appnm">Appointments</Link>
                     <Link className='dash_headername' to="d_pres">Prescriptions</Link>
+
                     {
                         doc_email ?
                             <>

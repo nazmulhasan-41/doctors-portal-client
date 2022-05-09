@@ -8,19 +8,19 @@ import './Info.css';
 const Info = () => {
     const data = [{
         title: 'opening hour',
-        subtitle: 'aaaaaaaaaaaaas dsd sa ds ad asd sa d asd',
+        subtitle: '24/7',
         icon: faDoorOpen
     },
 
     {
         title: 'location',
-        subtitle: 'sdsdsdsd s d sd s ds d sd sd s ds ds ',
+        subtitle: 'Motijhil , Dhaka , Bangladesh ',
         icon: faLocationDot
 
     },
     {
         title: 'contact us',
-        subtitle: 'lllllll sd s dddasasas       dsdsd  ds d sd sd sd s ds ds d sd s ds d',
+        subtitle: 'Mobile No: 012xxxxxxx',
         icon: faContactBook
 
     },
