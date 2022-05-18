@@ -18,7 +18,7 @@ const Dash_prescriptions = () => {
         }
         var stringifyObj = JSON.stringify(obj);
 
-        fetch(`http://localhost:5000/getAppointments/${stringifyObj}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/getAppointments/${stringifyObj}`)
             .then(data => data.json())
             .then(res => setApmnts(res))
 

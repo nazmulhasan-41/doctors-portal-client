@@ -11,7 +11,7 @@ const AppointmentsAvailable = ({ date }) => {
     const [apnmtByDate,setApnmtByDate]=useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/getAllAppointments')
+        fetch('https://whispering-headland-20600.herokuapp.com/getAllAppointments')
         .then(response=>response.json())
         .then(result=>setApnmtByDate(result))
 

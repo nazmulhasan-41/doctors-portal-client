@@ -34,7 +34,7 @@ const AddReview_InDetails = ({id,changeVariable,setChangeVariable}) => {
         };
         
 
-        fetch('http://localhost:5000/addReview', insertedData)
+        fetch('https://whispering-headland-20600.herokuapp.com/addReview', insertedData)
             .then(response => response.json())
             .then(result => {
                 console.log(result);

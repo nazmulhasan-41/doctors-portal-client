@@ -21,7 +21,7 @@ const Dash_AddReviewModal = ({apmnt, reloadVariable,setReloadVariable}) => {
             body: JSON.stringify(newData)
         };
 
-        fetch('http://localhost:5000/addReviewInAppointment', prescriptData)
+        fetch('https://whispering-headland-20600.herokuapp.com/addReviewInAppointment', prescriptData)
             .then(response => response.json())
             .then(result => {
                 console.log(result)

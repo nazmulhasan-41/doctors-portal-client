@@ -21,7 +21,7 @@ const Dash_appointments = () => {
         }
         var stringifyObj = JSON.stringify(obj);
 
-        fetch(`http://localhost:5000/getAppointments/${stringifyObj}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/getAppointments/${stringifyObj}`)
             .then(data => data.json())
             .then(res => setMyApmnt(res))
     }
@@ -33,7 +33,7 @@ const Dash_appointments = () => {
             obj = {date: selectedDate};
         }
         var stringifyObj = JSON.stringify(obj);
-        fetch(`http://localhost:5000/getAppointments/${stringifyObj}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/getAppointments/${stringifyObj}`)
             .then(data => data.json())
             .then(res => setMyApmnt(res))
     }, [])

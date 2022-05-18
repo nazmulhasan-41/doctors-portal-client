@@ -13,7 +13,7 @@ const Dash_addService = () => {
             body: JSON.stringify(data)
         };
 
-        fetch('http://localhost:5000/addNewService', serviceData)
+        fetch('https://whispering-headland-20600.herokuapp.com/addNewService', serviceData)
             .then(response => response.json())
             .then(result => {
                 console.log(result)

@@ -12,7 +12,7 @@ const Dash_addDoctor = () => {
             body: JSON.stringify(data)
         };
 
-        fetch('http://localhost:5000/addNewDoctor', doctorData)
+        fetch('https://whispering-headland-20600.herokuapp.com/addNewDoctor', doctorData)
             .then(response => response.json())
             .then(result => {
                 console.log(result)

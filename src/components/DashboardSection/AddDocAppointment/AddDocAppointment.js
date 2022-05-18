@@ -10,7 +10,7 @@ const AddDocAppointment = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/getAllServices')
+        fetch('https://whispering-headland-20600.herokuapp.com/getAllServices')
             .then(response => response.json())
             .then(result => {
                 setAllServices(result)
@@ -29,7 +29,7 @@ const AddDocAppointment = () => {
             body: JSON.stringify(data)
         };
 
-        fetch('http://localhost:5000/addAppmntByDoc', appmntData)
+        fetch('https://whispering-headland-20600.herokuapp.com/addAppmntByDoc', appmntData)
             .then(response => response.json())
             .then(result => {
             })

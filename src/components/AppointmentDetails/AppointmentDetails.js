@@ -20,7 +20,7 @@ const AppointmentDetails = () => {
     const [service, setService] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/getAppmntAddedByDoc/${id}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/getAppmntAddedByDoc/${id}`)
             .then(response => response.json())
             .then(result => {
 
@@ -30,7 +30,7 @@ const AppointmentDetails = () => {
     }, [])
     useEffect(() => {
         console.log(appointmentDetails._id);
-        fetch(`http://localhost:5000/getServiceName/${appointmentDetails.serviceId}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/getServiceName/${appointmentDetails.serviceId}`)
             .then(response => response.json())
             .then(result => {
 

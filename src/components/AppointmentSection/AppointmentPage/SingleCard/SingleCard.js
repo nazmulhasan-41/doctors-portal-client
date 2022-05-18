@@ -28,7 +28,7 @@ const SingleCard = ({ apnmt, date }) => {
 
     const [serviceName, setServiceName] = useState('');
     useEffect(() => {
-        fetch(`http://localhost:5000/getServiceName/${apnmt.serviceId}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/getServiceName/${apnmt.serviceId}`)
             .then(response => response.json())
             .then(result => {
                 console.log(result);

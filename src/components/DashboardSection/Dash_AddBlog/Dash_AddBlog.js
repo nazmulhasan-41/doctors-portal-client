@@ -17,7 +17,7 @@ const Dash_AddBlog = () => {
             body: JSON.stringify(data)
         };
 
-        fetch('http://localhost:5000/addBlog', blogData)
+        fetch('https://whispering-headland-20600.herokuapp.com/addBlog', blogData)
             .then(response => response.json())
             .then(result => {
                 console.log(result)

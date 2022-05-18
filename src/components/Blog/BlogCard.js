@@ -9,7 +9,7 @@ const BlogCard = ({blog}) => {
 
     useEffect(()=>{
            //now fetch doctor details from doctor email
-           fetch(`http://localhost:5000/getDoctorDetails/${blog.docEmail}`)
+           fetch(`https://whispering-headland-20600.herokuapp.com/getDoctorDetails/${blog.docEmail}`)
            .then(response=>response.json())
            .then(result=>{
             //    console.log('====',result)

@@ -7,7 +7,7 @@ const ShowReview_InDetails = ({id,changeVariable}) => {
     const [reviews,setReviews]=useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/getReviews/${id}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/getReviews/${id}`)
         .then(response=>response.json())
         .then(result=>
             {

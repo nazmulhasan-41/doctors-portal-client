@@ -43,11 +43,11 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
 
         e.target.reset();
 
-        fetch('http://localhost:5000/updateAppointment', updationData)
+        fetch('https://whispering-headland-20600.herokuapp.com/updateAppointment', updationData)
             .then(response => response.json())
             .then(result => {
 
-                fetch('http://localhost:5000/addPrescript', prescriptData)
+                fetch('https://whispering-headland-20600.herokuapp.com/addPrescript', prescriptData)
                     .then(response => response.json())
                     .then(result => {
 
@@ -77,7 +77,7 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
         setIsOpen2(false);
     }
     useEffect(()=>{
-        fetch(`http://localhost:5000/getServiceName/${apmnt.serviceId}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/getServiceName/${apmnt.serviceId}`)
         .then(res=>res.json())
         .then(result=>{
             setServiceName(result.serviceName)

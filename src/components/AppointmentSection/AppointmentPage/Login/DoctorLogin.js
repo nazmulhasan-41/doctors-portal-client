@@ -13,7 +13,7 @@ const DoctorLogin = () => {
 
         var stringifyObj = JSON.stringify(userInfo);
 
-        fetch(`http://localhost:5000/doctorlogin/${stringifyObj}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/doctorlogin/${stringifyObj}`)
             .then(data => data.json())
             .then(res => {
                 // res.email? 

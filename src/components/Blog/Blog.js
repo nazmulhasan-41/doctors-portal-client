@@ -11,7 +11,7 @@ const Blog = () => {
     
 
     useEffect(()=>{
-        fetch('http://localhost:5000/getAllBlogs')
+        fetch('https://whispering-headland-20600.herokuapp.com/getAllBlogs')
         .then(response=>response.json())
         .then(result=>{
             setBlogNews(result)

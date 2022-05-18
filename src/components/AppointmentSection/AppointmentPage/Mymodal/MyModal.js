@@ -38,7 +38,7 @@ const MyModal = ({ closeModal, modalIsOpen , date,apnmt}) => {
         
         e.target.reset();
 
-        fetch('http://localhost:5000/addAppointment', requestOptions)
+        fetch('https://whispering-headland-20600.herokuapp.com/addAppointment', requestOptions)
             .then(response => response.json())
             .then(res => console.log(res) );
         e.target.reset();

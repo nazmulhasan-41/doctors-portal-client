@@ -19,7 +19,7 @@ const ViewPrescriptSection = ({ apmnt,serviceName }) => {
     function openModal() {
         setIsOpen(true);
 
-        fetch(`http://localhost:5000/getPrescript/${apmnt._id}`)
+        fetch(`https://whispering-headland-20600.herokuapp.com/getPrescript/${apmnt._id}`)
             .then(response => response.json())
             .then(result => { setPrescript(result) })
     }
