@@ -1,10 +1,14 @@
 import React from 'react';
 
 const AppmntsDocWIthPatient = ({apmnt}) => {
-    console.log(apmnt)
+    
     return (
         <>
-            {apmnt.firstName}" "{apmnt.date} 
+            <td>{apmnt.firstName}</td>
+            <td>{apmnt.phoneno}</td> 
+            <td>{apmnt.date}</td> 
+            <td>{apmnt.time}</td> 
+            <td>{apmnt.age}</td> 
             
         </>
     );

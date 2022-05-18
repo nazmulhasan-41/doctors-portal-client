@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 const Dash_addDoctor = () => {
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = data => {
+    const onSubmit = (data,e) => {
 
         const doctorData = {
             method: 'POST',
@@ -20,6 +20,7 @@ const Dash_addDoctor = () => {
             .catch(error => {
                 console.error('Error:', error);
             });
+        e.target.reset();
     }
 
     return (

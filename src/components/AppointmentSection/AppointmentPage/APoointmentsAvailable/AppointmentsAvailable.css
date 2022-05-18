@@ -54,3 +54,11 @@ input#formBasicEmail {
     margin-top: 10px;
     min-width: fit-content;
 }
+.title_cldr {
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}

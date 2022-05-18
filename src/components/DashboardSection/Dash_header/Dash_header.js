@@ -22,6 +22,7 @@ const Dash_header = () => {
                                 <Link className='dash_headername' to="d_addService">Add service</Link>
                                 <Link className='dash_headername' to="d_addDoctor">Add Doctor</Link>
                                 <Link className='dash_headername' to="d_addDocAppmnt">Add Appointment By Doctor</Link>
+                                <Link className='dash_headername' to="d_addBlog">Add Blog</Link>
 
                             </>
                             :

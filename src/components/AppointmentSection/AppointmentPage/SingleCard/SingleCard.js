@@ -2,50 +2,62 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import MyModal from '../Mymodal/MyModal';
+import './SingleCard.css';
 
-const SingleCard = ({ apnmt,date }) => {
+const SingleCard = ({ apnmt, date }) => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
     let navigate = useNavigate();
 
     function openModal() {
 
-        var email=localStorage.getItem('email');
+        var email = localStorage.getItem('email');
 
-        if( email)
-        {
+        if (email) {
             setIsOpen(true);
         }
-        else{
+        else {
             navigate('/login');
         }
-        
+
     }
 
     function closeModal() {
         setIsOpen(false);
     }
 
-    const [serviceName,setServiceName]=useState('');
-    useEffect(()=>{
+    const [serviceName, setServiceName] = useState('');
+    useEffect(() => {
         fetch(`http://localhost:5000/getServiceName/${apnmt.serviceId}`)
-        .then(response=>response.json())
-        .then(result=>
-            {
+            .then(response => response.json())
+            .then(result => {
                 console.log(result);
                 setServiceName(result.serviceName)
-                
+
             }
             )
-
-    },[]) 
+    }, [])
 
     return (
 
         <Card className='card_apnmnt' >
-
             <Card.Body className='classBody_apnmnt'>
-                <Link to ={`/appmntDetails/${apnmt._id}`}  className='cardTitle_apnmnt'>{serviceName}</Link>
+
+                {/* <Link to ={`/appmntDetails/${apnmt._id}`} 
+                className='cardTitle_apnmnt'>{serviceName}</Link> */}
+
+                <Link
+                to={`/appmntDetails/${apnmt._id}`}
+                
+                state={{ from:'occupation',
+                    apnmt:apnmt,
+                    date:date,
+                    serviceName:serviceName,
+                 }}
+
+                    className='cardTitle_apnmnt'>{serviceName}
+                </Link>
+
                 <h6>{apnmt.docEmail}</h6>
                 <div className='time_apnmnt'>
                     {apnmt.time} AM/PM
@@ -63,8 +75,6 @@ const SingleCard = ({ apnmt,date }) => {
                     date={date}
                     serviceName={serviceName}
                 ></MyModal>
-
-
             </Card.Body>
         </Card>
     );

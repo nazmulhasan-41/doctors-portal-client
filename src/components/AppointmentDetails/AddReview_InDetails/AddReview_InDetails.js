@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
+import './AddReview_InDetails.css'
 
 
 const AddReview_InDetails = ({id,changeVariable,setChangeVariable}) => {
@@ -49,20 +50,22 @@ const AddReview_InDetails = ({id,changeVariable,setChangeVariable}) => {
     return (
         <div>
 
-            <button onClick={openModal}>Add Review</button>
+            <button className='AddreviewClass' onClick={openModal}>Add Review</button>
 
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
             >
-                <form onSubmit={handleSubmit(onSubmit)} >
+                <form className='modalFormToAddReview' onSubmit={handleSubmit(onSubmit)} >
 
-                    <textarea placeholder='prescribe the patient' {...register("reviewText")} />
-                    <input placeholder='Rate in 5' {...register("rating")} />
+                <div  className='modelFieldClass'>    <textarea className='modalField' placeholder='Write tour Review' {...register("reviewText")} /><br/><br/></div>
+                <div className='modelFieldClass'>    <input className='modalField rating' placeholder='Rate in 5' {...register("rating")} /><br/><br/></div>
+            <div className='submitClose'>
+            <div className='modelFieldClass submit'>    <input className='modalField submit' type="submit" /></div>
+            <div className='modelFieldClass'>    <button className='modalField close' onClick={closeModal} >Close</button></div>
 
-                    <input type="submit" />
-
-                    <button onClick={closeModal} >Close</button>
+            </div>
+                
                 </form>
             </Modal>
 

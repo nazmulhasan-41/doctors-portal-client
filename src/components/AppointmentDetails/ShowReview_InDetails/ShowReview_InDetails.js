@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleReview from './SingleReview';
+import './ShowReview_inDetails.css'
 
 const ShowReview_InDetails = ({id,changeVariable}) => {
 
@@ -10,7 +11,7 @@ const ShowReview_InDetails = ({id,changeVariable}) => {
         .then(response=>response.json())
         .then(result=>
             {
-                console.log(result)
+               
                 setReviews(result)
             }
             )
@@ -20,9 +21,9 @@ const ShowReview_InDetails = ({id,changeVariable}) => {
     return (
         <div>
             <h1>Reviews</h1>
-            <div>
+            <div className='reviewsAll'>
                 {
-                    reviews.map(review=><li><SingleReview review={review}></SingleReview></li>)
+                    reviews.map(review=><><SingleReview review={review}></SingleReview></>)
                 }
 
             </div>

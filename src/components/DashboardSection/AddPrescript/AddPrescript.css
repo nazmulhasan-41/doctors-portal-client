@@ -1,0 +1,18 @@
+.addPresField.title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+textarea.addPresField {
+    width: 100%;
+}
+.submitAndClose {
+    display: flex;
+    justify-content: space-evenly;
+}
+input.addPresField {
+    padding: 5px 20px 5px 20px;
+}
+
+button.addPresField {
+    padding: 5px 20px 5px 20px;
+}

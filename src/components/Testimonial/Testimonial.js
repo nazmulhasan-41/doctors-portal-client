@@ -39,8 +39,7 @@ const Testimonial = () => {
                         comments.map(cmnt=>(
                             <Col xs={12} md={3} className='col_testimonial'>
 
-
-                        <Card style={{ width: '15rem' }}>
+                        <Card className='cardClass' style={{   }}>
                             <Card.Body>
                                 
                                 <Card.Text>

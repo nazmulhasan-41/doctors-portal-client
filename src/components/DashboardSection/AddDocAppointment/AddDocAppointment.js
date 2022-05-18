@@ -14,14 +14,13 @@ const AddDocAppointment = () => {
             .then(response => response.json())
             .then(result => {
                 setAllServices(result)
-                console.log(result)
             })
             .catch(error => {
                 console.error('Error:', error);
             });
     }, [])
 
-    const onSubmit = data => {
+    const onSubmit = (data,e) => {
         console.log(data)
 
         const appmntData = {
@@ -33,17 +32,17 @@ const AddDocAppointment = () => {
         fetch('http://localhost:5000/addAppmntByDoc', appmntData)
             .then(response => response.json())
             .then(result => {
-                console.log(result)
             })
             .catch(error => {
                 console.error('Error:', error);
             });
+        e.target.reset();
     }
     return (
         <div>
-            <h1>Add Appointment By doctor</h1>
+            <h1>Add Appointment By Doctor</h1>
 
-            <form onSubmit={handleSubmit(onSubmit)} >
+            <form className='addApmntByDocForm' style={{marginTop:'30px'}} onSubmit={handleSubmit(onSubmit)} >
                 <select {...register("serviceId",  { required: true })}>
 
                     {

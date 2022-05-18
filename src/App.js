@@ -16,9 +16,10 @@ import AddDocAppointment from './components/DashboardSection/AddDocAppointment/A
 import Dash_docsAppmointment from './components/DashboardSection/Dash_docsAppmointment/Dash_docsAppmointment';
 import ContactPage from './components/ContactPage/ContactPage';
 import AppointmentDetails from './components/AppointmentDetails/AppointmentDetails';
+import Dash_AddBlog from './components/DashboardSection/Dash_AddBlog/Dash_AddBlog';
 
 function App() {
- 
+
 
   return (
 
@@ -39,15 +40,13 @@ function App() {
           <Route path="d_addDoctor" element={<Dash_addDoctor />} />
           <Route path="d_addDocAppmnt" element={<AddDocAppointment />} />
           <Route path="d_docsAppmnt" element={<Dash_docsAppmointment />} />
-
+          <Route path="d_addBlog" element={<Dash_AddBlog />} />
 
         </Route>
         <Route path="/contactPage" element={<ContactPage />} />
         <Route path="/appmntDetails/:id" element={<AppointmentDetails />} />
 
 
-
-        
       </Routes>
       <Footer></Footer>
 

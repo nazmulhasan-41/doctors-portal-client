@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './DoctoreLogin.css';
+import './DoctorLogin.css';
 
 
 const DoctorLogin = () => {
@@ -20,9 +20,7 @@ const DoctorLogin = () => {
               localStorage.setItem('doc_email',res.email);
               navigate('/')
               
-             
             })
-
     }
     const onChangeHandler=(e)=>{
         
@@ -43,11 +41,13 @@ const DoctorLogin = () => {
     return (
         <div className='doctorLogin'>
 
-            <form >
+            <form className='docLoginForm'>
 
-                <input style={{ marginTop: '10px' }} onChange={onChangeHandler} className='formField' placeholder='User ID' type="text" id="fname" name="userID" /><br />
+                <input style={{ marginTop: '10px' }} onChange={onChangeHandler} className='formField' 
+                placeholder='Doctor ID' type="text" id="fname" name="userID" /><br />
 
-                <input style={{ marginTop: '10px' }} onChange={onChangeHandler} className='formField' placeholder='Password' type="text" id="lname" name="password" /><br /><br />
+                <input style={{ marginTop: '10px' }} onChange={onChangeHandler} className='formField'
+                 placeholder='Password' type="text" id="lname" name="password" /><br /><br />
                 <input type="submit" value="Login" onClick={docLoginHandler} />
             </form>
 

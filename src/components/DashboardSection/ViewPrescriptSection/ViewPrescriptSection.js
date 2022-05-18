@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
 import { useNavigate } from 'react-router-dom';
-import Dash_AddReviewModal from '../Dash_AddReviewModal/Dash_AddReviewModal';
+import './ViewPrescriptSection.css';
 
 
 
-const ViewPrescriptSection = ({ apmnt }) => {
+const ViewPrescriptSection = ({ apmnt,serviceName }) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     const [prescript, setPrescript] = useState({})
@@ -30,18 +30,17 @@ const ViewPrescriptSection = ({ apmnt }) => {
     return (
         <div>
 
-            <button onClick={openModal}>View prescription</button>
+            <button className='viewReportClass' onClick={openModal}>View </button>
 
-            
-
+        
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
             >
                 <form >
-                    {/* apoointment ID: {apmnt._id}<br /> */}
-                    {prescript._id} <br/>
-                    {prescript.prescribeFields} <br/> <br/>
+                   
+                <div className='prescriptField serviceName'>   {serviceName} <br/></div>
+                <div className='prescriptField' >    {prescript.prescribeFields} <br/> <br/></div>
 
                     <button onClick={closeModal} >Close</button>
                 </form>

@@ -1,0 +1,16 @@
+.loginClass {
+    display: flex;
+    justify-content: center;
+    margin:30px;
+}
+button.logAction {
+    margin: 10px;
+    padding: 5px 20px 5px 20px;
+    border: none;
+    background-color: #a1e0e2;
+    border-radius: 5px;
+}
+.loginClass {
+    display: block;
+    text-align: center;
+}

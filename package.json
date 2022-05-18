@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -15,6 +16,7 @@
     "firebase": "^9.7.0",
     "google-map-react": "^2.1.10",
     "google-maps-react": "^2.0.6",
+    "lorem-ipsum": "^2.0.4",
     "react": "^18.1.0",
     "react-bootstrap": "^2.3.1",
     "react-calendar": "^3.7.0",

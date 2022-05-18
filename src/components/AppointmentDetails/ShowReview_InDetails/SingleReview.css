@@ -1,0 +1,14 @@
+.nameRating {
+    display: flex;
+    padding-bottom: 20px;
+   
+    font-size: 18px;
+    font-weight: 600;
+}
+.userReview {
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+.ratingsection {
+    margin-left: 15px;
+}

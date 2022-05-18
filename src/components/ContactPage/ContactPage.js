@@ -1,9 +1,6 @@
 import React from 'react';
+import ContactUsForm from '../ContactUsForm/ContactUsForm';
 import Header from '../Header/Header';
-import GoogleMapReact from 'google-map-react';
-import GoogleMap from './GoogleMap';
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 
 const ContactPage = () => {
@@ -12,9 +9,7 @@ const ContactPage = () => {
     return (
         <div>
             <Header></Header>
-
-            <GoogleMap></GoogleMap>
-
+            <ContactUsForm></ContactUsForm>
 
         </div>
     );

@@ -1,0 +1,44 @@
+button.AddreviewClass {
+    margin-left: 50px;
+    padding: 10px 30px 10px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: cadetblue;
+}
+
+form.modalFormToAddReview {
+   
+    text-align: center;
+    /* width: 107%; */
+}
+textarea.modalField {
+    width: 70%;
+}
+input.modalField.rating {
+    width: 70%;
+}
+.submitClose {
+    display: flex;
+    justify-content: space-evenly;
+}
+input.modalField.submit {
+    padding: 7px 35px 7px 35px;
+    font-weight: 300;
+}
+button.modalField.close {
+    padding: 7px 35px 7px 35px;
+    font-weight: 300;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+    width: 50%;
+    /* text-align: center; */
+    /* margin: 0px 0px 0px 0px; */
+}
+.ReactModal__Content.ReactModal__Content--after-open {
+    width: 50%;
+    display: inline-table;
+  
+    margin: auto auto auto auto;
+}

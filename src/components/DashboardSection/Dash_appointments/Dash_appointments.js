@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import D_calender from './D_calender/D_calender';
+import './Dash_appointments.css';
+import { Table } from 'react-bootstrap';
+import Dash_appointmentListTable from './Dash_appointmentListTable/Dash_appointmentListTable';
+
 
 const Dash_appointments = () => {
     var email = localStorage.getItem('email');
     var doc_email = localStorage.getItem('doc_email');
 
     const [myApmnt, setMyApmnt] = useState([]);
-    const [selectedDate, onChange] = useState((new Date()).toDateString());
+    const [selectedDate, onChange] = useState();
+
     const selectDateHandler = (date) =>
     {
-
         onChange(date.toDateString());
         var obj = { date: date.toDateString(), email: email };
         if(doc_email){
@@ -36,22 +40,16 @@ const Dash_appointments = () => {
 
     return (
         <div>
-            <h1>My appointments on :  </h1>{selectedDate}
-            <div className='section1' style={{display: 'flex', }}>
-                <div style={{width:'60%'}}>
+            <h1 className='title_d_apmnt'>My appointments
+            {selectedDate && ' on'} {selectedDate} </h1>
+            <div className='section1' style={{ /*display: 'flex',*/ }}>
+                <div className='calenderClass' >
                     <D_calender selectDateHandler={selectDateHandler}></D_calender>
 
                 </div>
-                <div style={{marginLeft:'10px'}}>
-                    {
-                        myApmnt.map(apmnt => <li>
-                            {apmnt.firstName}
-                            {apmnt.date} 
-                        
-                        </li>)
-                    }
 
-                </div>
+                <Dash_appointmentListTable myApmnt={myApmnt}></Dash_appointmentListTable>
+
             </div>
         </div>
     );

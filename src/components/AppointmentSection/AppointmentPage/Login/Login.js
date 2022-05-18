@@ -4,6 +4,8 @@ import firebaseConfig from './firebaseConfig';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Outlet, useNavigate } from 'react-router-dom';
 import Header from '../../../Header/Header';
+import './Login.css';
+
 
 const provider = new GoogleAuthProvider();
 const app = initializeApp(firebaseConfig);
@@ -25,7 +27,7 @@ const Login = () => {
 
                 setLoggedEmail(user.email);
                 localStorage.setItem("email", user.email);
-                
+
                 navigate(-1);
 
             }).catch((error) => {
@@ -33,31 +35,43 @@ const Login = () => {
                 const errorMessage = error.message;
             });
     }
-    const signOutHandler=()=>{
+    const signOutHandler = () => {
         localStorage.setItem("email", '');
         localStorage.setItem("doc_email", '');
         setLoggedEmail('');
     }
-    const doctorSignInHandler=()=>{
+    const doctorSignInHandler = () => {
         navigate('doctorlogin')
-        
+
     }
     return (
         <div>
             <Header></Header>
-            {
-                loggedEmail
-            }
-            {
-                loggedEmail ?
-                <button onClick={signOutHandler}> Log out</button>:
-                <>
-                <button onClick={signInHandler}> Google sign In</button>
-                <button onClick={doctorSignInHandler}> Doctor sign In</button>
-                </>
-            }
-        
-            <Outlet/>
+            <div className='loginClass'>
+                <div className='loggedEmail' style={{marginBottom:'20px'}}>
+                    {
+                        loggedEmail
+                    }
+                </div>
+
+                {
+                    loggedEmail ?
+                        <div ><button className='logAction' onClick={signOutHandler}> Log out</button></div>
+
+                        :
+                        <>
+                            <div className='logoutLoginClassSection'>
+                                <button className='logAction' onClick={signInHandler}> Google sign In</button>
+                                <button className='logAction' onClick={doctorSignInHandler}> Doctor sign In</button>
+                            </div>
+
+                        </>
+                }
+
+            </div>
+
+
+            <Outlet />
         </div>
     );
 };

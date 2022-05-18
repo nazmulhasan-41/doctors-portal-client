@@ -1,0 +1,22 @@
+.serviceClass1 {
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    color: cadetblue;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.serviceClass3 {
+    margin-top: 30px;
+}
+.addbutton_Modal {
+    display: flex;
+}
+.addApmntApmntDetails {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-left: 20px;
+}

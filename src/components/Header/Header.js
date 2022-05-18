@@ -16,7 +16,7 @@ const Header = () => {
                     <Link className='headername' to="/">Home</Link>
                     <Link className='headername' to="/appointment">Appointment</Link>
                     <Link className='headername' to="/contactPage">Contact</Link>
-                    <Link className='headername' to="/appmntDetails">Details</Link>
+                    
 
                     {
                         email ?

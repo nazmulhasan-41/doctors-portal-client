@@ -1,0 +1,10 @@
+button.viewReportClass {
+    width: 100%;
+}
+.prescriptField {
+    margin: 10px;
+}
+.prescriptField.serviceName {
+    border-bottom: 2px solid;
+    padding-bottom: 10px;
+}

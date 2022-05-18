@@ -1,11 +1,11 @@
-import { reload } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
-import { useNavigate } from 'react-router-dom';
-import Dash_AddReviewModal from '../Dash_AddReviewModal/Dash_AddReviewModal';
 import ViewPrescriptSection from '../ViewPrescriptSection/ViewPrescriptSection';
 import ViewReviewModal from './ViewReviewModal';
+import './AddPrescript.css';
+
 
 const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
 
@@ -15,8 +15,6 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
     var email = localStorage.getItem('email');
     var doc_email = localStorage.getItem('doc_email');
 
-    console.log(apmnt);
-
     function openModal() {
         setIsOpen(true);
     }
@@ -24,7 +22,7 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
         setIsOpen(false);
     }
 
-    const onSubmit = data => {
+    const onSubmit = (data,e) => {
 
         var newData = { _id: apmnt._id, prescriptionFlag: 1 };
         var newPrescript = { _id: apmnt._id, ...data }
@@ -43,10 +41,11 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
             body: JSON.stringify(newPrescript)
         };
 
+        e.target.reset();
+
         fetch('http://localhost:5000/updateAppointment', updationData)
             .then(response => response.json())
             .then(result => {
-
 
                 fetch('http://localhost:5000/addPrescript', prescriptData)
                     .then(response => response.json())
@@ -68,7 +67,8 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
     const [reviewButtonState, setReviewButtonState] = useState('');
     const [modalIsOpen2, setIsOpen2] = React.useState(false);
     const [reviewLists, setReviewLists] = useState([]);
-    const [reloadVariable,setReloadVariable]=useState(0);
+    const [reloadVariable, setReloadVariable] = useState(0);
+    const [serviceName,setServiceName]=useState();
 
     function openModal2() {
         setIsOpen2(true);
@@ -76,95 +76,62 @@ const AddPrescript = ({ apmnt, setApmnts, data, changeData }) => {
     function closeModal2() {
         setIsOpen2(false);
     }
+    useEffect(()=>{
+        fetch(`http://localhost:5000/getServiceName/${apmnt.serviceId}`)
+        .then(res=>res.json())
+        .then(result=>{
+            setServiceName(result.serviceName)
+        })
 
-    useEffect(() => {
-
-        fetch(`http://localhost:5000/getReviewInfo/${apmnt._id}`)
-            .then(response => response.json())
-            .then(result => {
-                console.log('review result', result)
-                if (result.length > 0) {
-                    setReviewLists(result)
-
-                    setReviewButtonState(
-                        <>
-                        <Dash_AddReviewModal 
-                        apmnt={apmnt}
-                         setReloadVariable={setReloadVariable}
-                         reloadVariable={reloadVariable}
-                         ></Dash_AddReviewModal>
-
-                        <button onClick={openModal2} >View Review</button>
-                        </>
-                    )
-                }
-                else {
-                    setReviewButtonState(<Dash_AddReviewModal 
-                        apmnt={apmnt}
-                        setReloadVariable={setReloadVariable}
-                        reloadVariable={reloadVariable}
-
-                        ></Dash_AddReviewModal>)
-                }
-            })
-    }, [reloadVariable]);
-
-
-
+    },[])
 
     return (
         <>
-            {apmnt._id} '  ' {apmnt.firstName}' ' {apmnt.date}' ' {apmnt.time}' '  {apmnt.prescriptionFlag}
 
+            <td>{serviceName}</td>
+            <td>{apmnt.firstName}</td>
+            <td>{apmnt.date}</td>
+            <td>{apmnt.time}</td>
+            <td>{apmnt.docEmail}</td>
+            <td>
+                {
+                    apmnt.prescriptionFlag > 0 ?
+                        <>
+                            <ViewPrescriptSection apmnt={apmnt} serviceName={serviceName}></ViewPrescriptSection>
 
-            {
-                apmnt.prescriptionFlag > 0 ?
-                    <>
-                        <ViewPrescriptSection apmnt={apmnt}></ViewPrescriptSection>
-                        {reviewButtonState}
-                    </>
-                    :
-                    <>
-                        {
-                            (doc_email && doc_email == apmnt.docEmail) ?
+                        </>
+                        :
+                        <>
+                            {
+                                (doc_email && doc_email == apmnt.docEmail) ?
 
-                                <button onClick={openModal}>Add Prescription</button>
-                                :
-                                <>
-                                    {reviewButtonState}
-                                    <button > Prescription Not Added Yet</button>
-                                </>
+                                    <button style={{ width: '100%' }} onClick={openModal}>Add</button>
+                                    :
+                                    <>
+                                        Not Added Yet
+                                    </>
+                            }
+                        </>
+                }
 
-                        }
-                    </>
-
-            }
+            </td>
 
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
             >
                 <form onSubmit={handleSubmit(onSubmit)} >
-                    apoointment ID: {apmnt._id}<br />
-                    <textarea placeholder='prescribe the patient' {...register("prescribeFields")} />
+                    <div className='addPresField title'>    Service Name : {serviceName}<br /></div>
+                    <div >    <textarea className='addPresField' placeholder='prescribe the patient' {...register("prescribeFields")} /></div>
 
-                    <input type="submit" />
+                    <div className='submitAndClose'>
+                        <div>    <input className='addPresField submit' type="submit" /></div>
 
-                    <button onClick={closetHandler} >Close</button>
+                        <div >    <button className='addPresField close' onClick={closetHandler} >Close</button></div>
+                    </div>
+
                 </form>
             </Modal>
-
-
-            <ViewReviewModal
-
-                apmnt={apmnt}
-                reviewLists={reviewLists}
-                openModal2={openModal2}
-                closeModal2={closeModal2}
-                modalIsOpen2={modalIsOpen2}
-
-            >View Review</ViewReviewModal>
-
         </>
     );
 };

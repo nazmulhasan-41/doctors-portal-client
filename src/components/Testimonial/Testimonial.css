@@ -16,3 +16,10 @@
 .testimonial {
     text-align: center;
 }
+.col_testimonial.col-md-3.col-12 {
+    margin-right: 0px;
+    width: min-content;
+}
+.cardClass.card {
+    width: 20rem;
+}

@@ -35,3 +35,19 @@ button.ct_btn {
     background-color: #51DDDA;
     padding: 5px 25px 5px 25px;
 }
+form.contactForm {
+    display: grid;
+}
+.formInputField {
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+input.formInputField.submitbutton {
+    width: fit-content;
+    padding: 5px 20px 5px 20px;
+}
+.btnClassEmail {
+    display: flex;
+    justify-content: space-around;
+}

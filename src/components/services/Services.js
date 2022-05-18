@@ -43,7 +43,7 @@ const Services = () => {
                                     {d.serviceName}
                                 </h3>
                                 <h6 className='desservice' >
-                                    {d.serviceDescription}
+                                    {(d.serviceDescription).substr(0,150)}
                                 </h6>
 
                             </div>
